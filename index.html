@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <h1>English test</h1>
+        <h2>Test your knowledge</h2>
+        <div id="app">
+            <ul class="status-line" v-show="currentIndex !== quiz.length">
+                <li v-for="(item, index) in quiz"
+                :class="{activeQuiz:index === currentIndex,checked: index < currentIndex}">{{item.id}}</li>
+            </ul>
+            <div class="question-form"
+            v-for="(item, index) in quiz">
+            <transition name="hide" mode="in-out">
+                <div class="question"
+                v-show="index === currentIndex">
+                <h3>{{item.header}}</h3>
+                    <ul>
+                        <li v-for="(answer, jindex) in item.answers">
+                            <label>
+                                <input type="radio"
+                                v-bind:value="answer.isTrue"
+                                v-bind:name="index"
+                                v-bind:id="item.id"
+                                v-model="userAnswer[index]"
+                                :key="item.id">
+                               <span>{{answer.text}}</span> 
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </transition>
+            </div>
+            <button class="next" @click="next()" v-if="currentIndex < quiz.length">Continue</button>
+            <div class="score" v-show="currentIndex == quiz.length">
+                <h4>Result <br> {{score()}}</h4>
+                <button @click="again()">Try again</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="main.js"></script>
+</body>
+</html>

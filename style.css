@@ -1,0 +1,91 @@
+body{
+    background-color: #dbdbdb;
+    font-family: sans-serif;
+}
+#main{
+    width:600px;
+    margin:100px auto;
+    text-align: center;
+}
+.question-form{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.question{
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    background-color: #46a3fa;
+    border-radius: 15px;
+    color:#fff;
+    margin:0 auto;
+}
+h3{
+    font-size: 25px;
+    padding: 0 5px;
+}
+label{
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 10px;
+}
+ul{
+    padding: 5px 0;
+    list-style-type: none;
+}
+ ul.status-line{
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #fff;
+}
+li{
+    display: inline;
+    margin: 0 5px;
+    padding: 3px;
+    border-radius: 3px;
+}
+li.activeQuiz{
+    background-color: #ed7e55;
+    color:#fff;
+}
+li.checked{
+    background-color: #757575;
+    color:#fff;
+}
+button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border:none;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+button:hover{
+    cursor: pointer;
+}
+button.next{
+    background-color: #77eb34;
+    color:#eee;
+    font-weight: 600;
+    margin-top: 50%;
+}
+.hide-enter-active,.hide-leave-active{
+    transition: all .8s;
+}
+.hide-enter{
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.hide-leave-to{
+    transform: translateX(100px);
+    opacity: 0;
+}
+.score{
+    font-size: 20px;
+}
+.score button{
+    background-color: #c6d936;
+    color:#fff;
+}
